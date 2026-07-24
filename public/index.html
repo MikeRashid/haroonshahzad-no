@@ -3,312 +3,256 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Haroon Shahzad — IT Engineer, Automation &amp; AI</title>
-<meta name="description" content="Haroon (Mike) Shahzad — IT/DevOps at Norfund, computer engineering student at OsloMet." />
+<title>Haroon Shahzad — IT Engineer</title>
+<meta name="description" content="Haroon Shahzad — IT Systems Engineer at Norfund. Automation, AI integrations, Microsoft 365 and Azure." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- STATUS BAR: signature element. Fetched live from /api/status -->
   <div class="statusbar" id="statusbar">
     <span class="dot" aria-hidden="true"></span>
-    <span id="status-text">CHECKING STATUS…</span>
+    <span id="status-text">Checking status…</span>
   </div>
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <div class="social-links">
-        <a href="https://github.com/MikeRashid" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-        <a href="https://www.linkedin.com/in/haroon-shahzad-b22596b4/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-      </div>
+      <a href="#top" class="wordmark">Haroon Shahzad</a>
       <nav class="nav">
         <a href="#projects">Projects</a>
-        <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero wrap">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <p class="eyebrow">// it engineer — automation · ai · microsoft 365 · azure</p>
-          <h1>Haroon Shahzad</h1>
-          <p class="hero-sub">
-            I build internal tools, automate business processes, and help
-            organizations put AI and modern Microsoft technology to work.
-            Day to day: IT/DevOps at <strong>Norfund</strong>. Alongside that:
-            a bachelor's in computer engineering at <strong>OsloMet</strong>.
+  <main id="top">
+
+    <!-- INTRO -->
+    <section class="intro wrap">
+      <div class="intro-grid">
+        <div>
+          <p class="kicker">IT Systems Engineer</p>
+          <h1>I build the tools that make IT teams faster.</h1>
+          <p class="lead">
+            Automation, AI integrations, Microsoft 365 and Azure. Currently at
+            Norfund, while finishing a bachelor's in computer engineering at
+            OsloMet.
           </p>
-          <div class="hero-stats">
-            <div class="stat">
-              <span class="stat-num" id="stat-years-it">8+</span>
-              <span class="stat-label">years of enterprise IT experience</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num" id="stat-years-norfund">2+</span>
-              <span class="stat-label">years at Norfund</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">2/3</span>
-              <span class="stat-label">years into BEng Computer Engineering</span>
-            </div>
-          </div>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Get in touch</a>
-            <a href="#projects" class="btn btn-ghost">See projects</a>
+          <div class="intro-links">
+            <a href="#contact" class="btn">Get in touch</a>
+            <a href="https://www.linkedin.com/in/haroon-shahzad-b22596b4/" target="_blank" rel="noopener" class="link-plain">LinkedIn</a>
+            <a href="https://github.com/MikeRashid" target="_blank" rel="noopener" class="link-plain">GitHub</a>
           </div>
         </div>
-        <div class="hero-photo-wrap">
-          <img src="profile.png" alt="Portrait of Haroon Shahzad" class="hero-photo" />
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section wrap">
-      <p class="eyebrow">01 — projects</p>
-      <h2>Things I've built</h2>
-      <div class="project-grid">
-
-        <article class="project-card">
-          <div class="project-head">
-            <h3>Internal AI Support Tool</h3>
-            <span class="badge badge-live">in production</span>
-          </div>
-          <p>
-            Flask web app for IT support with AI-assisted case handling,
-            communication threads, and automatic summaries. Built from
-            scratch, including integration with the internal ticketing system.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Python / Flask</span>
-            <span class="tag">Jinja2</span>
-            <span class="tag">AI integration</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head">
-            <h3>MCP Integrations</h3>
-            <span class="badge badge-live">in production</span>
-          </div>
-          <p>
-            Designed, built, and documented a suite of internal MCP servers
-            connecting Claude to core business systems: Microsoft Graph
-            (identity, PIM, device management), Power BI (report querying),
-            M-Files (document and vault access), and email security tooling
-            for phishing/spam triage. Solved cross-platform authentication
-            issues (Node.js MCP servers on Windows) and shipped PowerShell-based
-            installers so the rest of the IT team could adopt the integrations
-            without manual setup.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Node.js</span>
-            <span class="tag">MCP</span>
-            <span class="tag">Microsoft Graph</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Azure</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head">
-            <h3>Covenant AI</h3>
-            <span class="badge badge-live">in production</span>
-          </div>
-          <p>
-            Developed Python automation for report processing and file
-            handling, while contributing to Azure DevOps pipelines and
-            Databricks/Data Factory workflows alongside the dev team.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Python</span>
-            <span class="tag">Azure DevOps</span>
-            <span class="tag">Databricks</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head">
-            <h3>This portfolio site</h3>
-            <span class="badge badge-live">in production</span>
-          </div>
-          <p>
-            haroonshahzad.no itself: a Node/Express backend with a live status
-            API and a working contact form, containerized with Docker and
-            deployed on Render with a custom domain and HTTPS.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Node.js / Express</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Render</span>
-          </div>
-          <a href="https://github.com/MikeRashid/haroonshahzad-no" target="_blank" rel="noopener" class="project-link">View source →</a>
-        </article>
-
+        <img src="profile.png" alt="Haroon Shahzad" class="portrait" />
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section wrap">
-      <p class="eyebrow">02 — about</p>
-      <h2>From support to platform engineering</h2>
-      <p class="body-text">
-        I'm an IT professional with broad experience in enterprise operations and
-        systems administration. Over the past few years my role has moved from
-        traditional IT support into automation, AI implementation, Microsoft 365
-        administration, and internal software development. I enjoy building internal
-        tools that simplify complex processes and make my colleagues' day-to-day
-        easier — while completing a bachelor's in computer engineering to
-        formalize and extend the technical foundation.
-      </p>
-      <div class="about-extra">
-        <img src="aura.png" alt="Haroon Shahzad, off duty" class="about-photo" />
-        <p class="about-extra-text">
-          Off duty, I'm usually deep into an anime binge or building something
-          just for fun.
+    <section id="about" class="band wrap">
+      <p class="section-label">About</p>
+      <div class="prose">
+        <p>
+          I'm an IT professional with broad experience in enterprise operations
+          and systems administration. Over the past few years my role has moved
+          from traditional IT support into automation, AI implementation,
+          Microsoft&nbsp;365 administration, and internal software development.
+        </p>
+        <p>
+          What I enjoy most is building internal tools that take a slow, manual
+          process and make it quick and repeatable — then documenting it well
+          enough that the rest of the team can pick it up without me.
         </p>
       </div>
     </section>
 
-    <!-- EXPERIENCE: git-log / deploy-log style, chronological order is real info -->
-    <section id="experience" class="section wrap">
-      <p class="eyebrow">03 — experience</p>
-      <h2>Deploy log</h2>
-      <ol class="timeline">
-        <li class="timeline-item">
-          <span class="timeline-date">Jan 2026 → now</span>
-          <div class="timeline-content">
-            <h3>Expanded scope: automation, AI &amp; integrations</h3>
-            <p>
-              Designed and extended an internal AI-powered IT support platform,
-              integrating ticketing, Teams, and Confluence to streamline IT
-              operations. Manage the organization's AI rollout end to end —
-              licensing, access, and training follow-up. Built MCP integrations
-              against internal systems, and contributed to an Azure DevOps/Power
-              Apps project with CI/CD pipelines.
-            </p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">Dec 2023 → now</span>
-          <div class="timeline-content">
-            <h3>IT Systems Engineer — Norfund</h3>
-            <p>
-              Broad operations and support role: Azure/Entra ID administration,
-              Intune device management, access control, onboarding/offboarding,
-              policy work, and PowerShell automation. Took the initiative to
-              reduce reliance on external vendors by building internal expertise
-              for tasks previously outsourced, and to standardize documentation
-              and case-handling routines across the IT team.
-            </p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">Before Dec 2023</span>
-          <div class="timeline-content">
-            <h3>IT Support &amp; ICT Trade Certificate</h3>
-            <p>
-              Eight years of hands-on IT experience prior to Norfund, capped
-              with a vocational ICT trade certificate (top distinction).
-            </p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">2019 — 2023</span>
-          <div class="timeline-content">
-            <h3>IT Advisor — Norwegian Police IT Services</h3>
-            <p>
-              Enterprise IT operations and systems administration for a large
-              public-sector organization.
-            </p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">2016 — 2019</span>
-          <div class="timeline-content">
-            <h3>IT Consultant — Norwegian Defence Research Establishment (FFI)</h3>
-            <p>
-              IT operations and support in a research and technology environment.
-            </p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">2016</span>
-          <div class="timeline-content">
-            <h3>Incident Manager — People4you / NMD</h3>
-            <p>
-              Incident management and IT operations support.
-            </p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">2015 — 2016</span>
-          <div class="timeline-content">
-            <h3>Application Manager — FHI (Norwegian Institute of Public Health)</h3>
-            <p>
-              Application administration and support.
-            </p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">2013 — 2015</span>
-          <div class="timeline-content">
-            <h3>ICT Apprentice — FHI</h3>
-            <p>
-              Vocational apprenticeship in ICT service, completed with top
-              distinction.
-            </p>
-          </div>
-        </li>
-      </ol>
+    <!-- PROJECTS -->
+    <section id="projects" class="band wrap">
+      <p class="section-label">Selected work</p>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-status">In production</span>
+        </div>
+        <div class="entry-body">
+          <h3>MCP Integrations</h3>
+          <p>
+            A suite of internal MCP servers connecting Claude to core business
+            systems: Microsoft Graph for identity, PIM and device management,
+            Power BI for report querying, M-Files for document access, and email
+            security tooling for phishing triage. I solved the cross-platform
+            authentication issues and shipped PowerShell installers so the rest
+            of the IT team could adopt them without manual setup.
+          </p>
+          <p class="entry-tech">Node.js · MCP · Microsoft Graph · Power BI · Azure</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-status">In production</span>
+        </div>
+        <div class="entry-body">
+          <h3>Internal AI Support Tool</h3>
+          <p>
+            A Flask web app for IT support with AI-assisted case handling,
+            communication threads and automatic summaries. Built from scratch,
+            including the integration with our ticketing system.
+          </p>
+          <p class="entry-tech">Python · Flask · Jinja2 · AI integration</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-status">In production</span>
+        </div>
+        <div class="entry-body">
+          <h3>Covenant AI</h3>
+          <p>
+            Python automation for report processing and file handling, plus
+            contributions to Azure DevOps pipelines and Databricks/Data Factory
+            workflows alongside the development team.
+          </p>
+          <p class="entry-tech">Python · Azure DevOps · Databricks</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-status">In production</span>
+        </div>
+        <div class="entry-body">
+          <h3>This site</h3>
+          <p>
+            haroonshahzad.no runs on a Node/Express backend with a live status
+            API and a working contact form, containerized with Docker and
+            deployed on Render behind a custom domain.
+            <a href="https://github.com/MikeRashid/haroonshahzad-no" target="_blank" rel="noopener" class="inline-link">Source on GitHub</a>
+          </p>
+          <p class="entry-tech">Node.js · Express · Docker · Render</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="band wrap">
+      <p class="section-label">Experience</p>
+
+      <div class="cv-row">
+        <div class="cv-date">2026 —</div>
+        <div class="cv-content">
+          <h3>Expanded scope: automation, AI &amp; integrations</h3>
+          <p class="cv-org">Norfund</p>
+          <p>
+            Designed and extended an internal AI-powered support platform
+            integrating ticketing, Teams and Confluence. Manage the
+            organization's AI rollout end to end — licensing, access and
+            training follow-up. Built MCP integrations against internal systems
+            and contributed to an Azure DevOps/Power Apps project with CI/CD
+            pipelines.
+          </p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-date">Dec 2023 —</div>
+        <div class="cv-content">
+          <h3>IT Systems Engineer</h3>
+          <p class="cv-org">Norfund</p>
+          <p>
+            Azure and Entra ID administration, Intune device management, access
+            control, onboarding and offboarding, policy work and PowerShell
+            automation. Took the initiative to bring tasks previously outsourced
+            in-house, and to standardize documentation and case-handling routines
+            across the IT team.
+          </p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-date">2019 — 2023</div>
+        <div class="cv-content">
+          <h3>IT Advisor</h3>
+          <p class="cv-org">Norwegian Police IT Services</p>
+          <p>Enterprise IT operations and systems administration in a large public-sector organization.</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-date">2016 — 2019</div>
+        <div class="cv-content">
+          <h3>IT Consultant</h3>
+          <p class="cv-org">Norwegian Defence Research Establishment (FFI)</p>
+          <p>IT operations and support in a research and technology environment.</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-date">2016</div>
+        <div class="cv-content">
+          <h3>Incident Manager</h3>
+          <p class="cv-org">People4you / NMD</p>
+          <p>Incident management and IT operations support.</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-date">2015 — 2016</div>
+        <div class="cv-content">
+          <h3>Application Manager</h3>
+          <p class="cv-org">Norwegian Institute of Public Health (FHI)</p>
+          <p>Application administration and support.</p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-date">2013 — 2015</div>
+        <div class="cv-content">
+          <h3>ICT Apprentice</h3>
+          <p class="cv-org">Norwegian Institute of Public Health (FHI)</p>
+          <p>Vocational apprenticeship in ICT service.</p>
+        </div>
+      </div>
     </section>
 
     <!-- EDUCATION -->
-    <section id="education" class="section wrap">
-      <p class="eyebrow">03b — education</p>
-      <h2>Education</h2>
-      <ol class="timeline">
-        <li class="timeline-item">
-          <span class="timeline-date">2024 — 2027 (expected)</span>
-          <div class="timeline-content">
-            <h3>BEng Computer Engineering — OsloMet</h3>
-            <p>
-              Three-year bachelor's degree, currently in year two. Covers
-              programming, algorithms and data structures, databases, networks
-              and cloud services, operating systems, and web development.
-            </p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">2013 — 2016</span>
-          <div class="timeline-content">
-            <h3>ICT Trade Certificate — FHI</h3>
-            <p>
-              Vocational ICT service certificate, completed with top
-              distinction (meget godt bestått).
-            </p>
-          </div>
-        </li>
-      </ol>
+    <section id="education" class="band wrap">
+      <p class="section-label">Education</p>
+
+      <div class="cv-row">
+        <div class="cv-date">2024 — 2027</div>
+        <div class="cv-content">
+          <h3>BEng Computer Engineering</h3>
+          <p class="cv-org">OsloMet — Oslo Metropolitan University</p>
+          <p>
+            Currently in year two of three. Programming, algorithms and data
+            structures, databases, networks and cloud services, operating
+            systems, web development.
+          </p>
+        </div>
+      </div>
+
+      <div class="cv-row">
+        <div class="cv-date">2013 — 2016</div>
+        <div class="cv-content">
+          <h3>ICT Service Trade Certificate</h3>
+          <p class="cv-org">Norwegian Institute of Public Health (FHI)</p>
+          <p>Completed with top distinction.</p>
+        </div>
+      </div>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section wrap">
-      <p class="eyebrow">04 — skills</p>
-      <h2>Toolkit</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Languages</h3>
-          <ul class="skill-list">
+    <section id="skills" class="band wrap">
+      <p class="section-label">Skills</p>
+      <div class="skills-columns">
+        <div>
+          <h4>Languages</h4>
+          <ul>
             <li>Python</li>
             <li>PowerShell</li>
             <li>C#</li>
@@ -316,9 +260,9 @@
             <li>SQL</li>
           </ul>
         </div>
-        <div class="skill-group">
-          <h3>Cloud &amp; Microsoft 365</h3>
-          <ul class="skill-list">
+        <div>
+          <h4>Cloud &amp; Microsoft 365</h4>
+          <ul>
             <li>Azure</li>
             <li>Entra ID</li>
             <li>Intune</li>
@@ -327,9 +271,9 @@
             <li>Power Platform</li>
           </ul>
         </div>
-        <div class="skill-group">
-          <h3>Systems &amp; Automation</h3>
-          <ul class="skill-list">
+        <div>
+          <h4>Systems &amp; Automation</h4>
+          <ul>
             <li>Endpoint management</li>
             <li>CI/CD</li>
             <li>Power Automate</li>
@@ -337,9 +281,9 @@
             <li>Policy work</li>
           </ul>
         </div>
-        <div class="skill-group">
-          <h3>Development</h3>
-          <ul class="skill-list">
+        <div>
+          <h4>Development</h4>
+          <ul>
             <li>Flask</li>
             <li>.NET</li>
             <li>Node.js</li>
@@ -348,17 +292,17 @@
             <li>Docker</li>
           </ul>
         </div>
-        <div class="skill-group">
-          <h3>AI</h3>
-          <ul class="skill-list">
+        <div>
+          <h4>AI</h4>
+          <ul>
             <li>Claude</li>
             <li>MCP</li>
             <li>Prompt engineering</li>
           </ul>
         </div>
-        <div class="skill-group">
-          <h3>Documentation &amp; Process</h3>
-          <ul class="skill-list">
+        <div>
+          <h4>Documentation</h4>
+          <ul>
             <li>Confluence</li>
             <li>Jira</li>
             <li>Workflow standardization</li>
@@ -369,35 +313,45 @@
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section wrap">
-      <p class="eyebrow">05 — contact</p>
-      <h2>Get in touch</h2>
-      <p class="body-text">
-        Messages are handled by a custom backend built with Node/Express,
-        deployed on Render.
-      </p>
-      <form id="contact-form" class="contact-form" novalidate>
-        <div class="field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required autocomplete="name" />
+    <section id="contact" class="band wrap">
+      <p class="section-label">Contact</p>
+      <div class="contact-grid">
+        <div class="prose">
+          <p>
+            Send a message and it lands in a backend I built for this site —
+            Node/Express, running on Render.
+          </p>
+          <p class="contact-alt">
+            Or find me on
+            <a href="https://www.linkedin.com/in/haroon-shahzad-b22596b4/" target="_blank" rel="noopener" class="inline-link">LinkedIn</a>
+            and
+            <a href="https://github.com/MikeRashid" target="_blank" rel="noopener" class="inline-link">GitHub</a>.
+          </p>
         </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email" />
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" id="submit-btn">Send message</button>
-        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-      </form>
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn" id="submit-btn">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <p>© <span id="year"></span> Haroon Shahzad — haroonshahzad.no</p>
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Haroon Shahzad</p>
+      <p class="footer-note">Built with Node/Express · Deployed on Render</p>
     </div>
   </footer>
 

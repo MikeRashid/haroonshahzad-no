@@ -13,15 +13,11 @@ async function loadStatus() {
 
     const minutes = Math.floor(data.uptimeSeconds / 60);
     statusText.textContent =
-      `${data.status} — ${data.domain} — up ${minutes} min — last deploy ${data.lastDeploy}`;
+      `${data.domain} · live · last deploy ${data.lastDeploy}`;
 
-    const yearsIt = document.getElementById("stat-years-it");
-    const yearsNorfund = document.getElementById("stat-years-norfund");
-    if (yearsIt) yearsIt.textContent = `${data.yearsInIT}+`;
-    if (yearsNorfund) yearsNorfund.textContent = `${data.yearsAtNorfund}+`;
   } catch (err) {
     // Falls back to static text if the backend isn't reachable
-    statusText.textContent = "STATIC MODE — backend not connected";
+    statusText.textContent = "haroonshahzad.no";
   }
 }
 
