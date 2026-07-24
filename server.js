@@ -17,6 +17,19 @@ app.use(express.static(path.join(__dirname, "public")));
 // Tidspunkt serveren startet, brukes til å regne ut "uptime" i statusstripen
 const startedAt = Date.now();
 
+// Actual start date at Norfund, used to compute an accurate "years at Norfund" figure
+const norfundStartDate = new Date("2023-12-11");
+
+function yearsSince(date) {
+  const now = new Date();
+  let years = now.getFullYear() - date.getFullYear();
+  const hasHadAnniversaryThisYear =
+    now.getMonth() > date.getMonth() ||
+    (now.getMonth() === date.getMonth() && now.getDate() >= date.getDate());
+  if (!hasHadAnniversaryThisYear) years -= 1;
+  return years;
+}
+
 // --- GET /api/status ---
 // Returnerer litt "levende" data til hero-stripen øverst på siden.
 // Dette er det som gjør stripen ekte (ikke bare hardkodet tekst i HTML).
@@ -29,7 +42,7 @@ app.get("/api/status", (req, res) => {
     uptimeSeconds,
     lastDeploy: new Date().toISOString().slice(0, 10),
     yearsInIT: 8,
-    yearsAtNorfund: new Date().getFullYear() - 2022,
+    yearsAtNorfund: yearsSince(norfundStartDate),
   });
 });
 
