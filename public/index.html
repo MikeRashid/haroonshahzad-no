@@ -20,9 +20,9 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <nav class="nav">
+        <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
@@ -53,7 +53,7 @@
             </div>
             <div class="stat">
               <span class="stat-num">2/3</span>
-              <span class="stat-label">years completed, BEng computer engineering</span>
+              <span class="stat-label">years into BEng Computer Engineering</span>
             </div>
           </div>
           <div class="hero-actions">
@@ -67,9 +67,94 @@
       </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section id="projects" class="section wrap">
+      <p class="eyebrow">01 — projects</p>
+      <h2>Things I've built</h2>
+      <div class="project-grid">
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Internal AI Support Tool</h3>
+            <span class="badge badge-live">in production</span>
+          </div>
+          <p>
+            Flask web app for IT support with AI-assisted case handling,
+            communication threads, and automatic summaries. Built from
+            scratch, including integration with the internal ticketing system.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Python / Flask</span>
+            <span class="tag">Jinja2</span>
+            <span class="tag">AI integration</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>MCP Integrations</h3>
+            <span class="badge badge-live">in production</span>
+          </div>
+          <p>
+            Designed, built, and documented a suite of internal MCP servers
+            connecting Claude to core business systems: Microsoft Graph
+            (identity, PIM, device management), Power BI (report querying),
+            M-Files (document and vault access), and email security tooling
+            for phishing/spam triage. Solved cross-platform authentication
+            issues (Node.js MCP servers on Windows) and shipped PowerShell-based
+            installers so the rest of the IT team could adopt the integrations
+            without manual setup.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Node.js</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Microsoft Graph</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Azure</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Covenant AI</h3>
+            <span class="badge badge-live">in production</span>
+          </div>
+          <p>
+            Developed Python automation for report processing and file
+            handling, while contributing to Azure DevOps pipelines and
+            Databricks/Data Factory workflows alongside the dev team.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">Azure DevOps</span>
+            <span class="tag">Databricks</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>This portfolio site</h3>
+            <span class="badge badge-live">in production</span>
+          </div>
+          <p>
+            haroonshahzad.no itself: a Node/Express backend with a live status
+            API and a working contact form, containerized with Docker and
+            deployed on Render with a custom domain and HTTPS.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Node.js / Express</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Render</span>
+          </div>
+          <a href="https://github.com/MikeRashid/haroonshahzad-no" target="_blank" rel="noopener" class="project-link">View source →</a>
+        </article>
+
+      </div>
+    </section>
+
     <!-- ABOUT -->
     <section id="about" class="section wrap">
-      <p class="eyebrow">01 — about</p>
+      <p class="eyebrow">02 — about</p>
       <h2>From support to platform engineering</h2>
       <p class="body-text">
         I'm an IT professional with broad experience in enterprise operations and
@@ -84,7 +169,7 @@
 
     <!-- EXPERIENCE: git-log / deploy-log style, chronological order is real info -->
     <section id="experience" class="section wrap">
-      <p class="eyebrow">02 — experience</p>
+      <p class="eyebrow">03 — experience</p>
       <h2>Deploy log</h2>
       <ol class="timeline">
         <li class="timeline-item">
@@ -102,7 +187,7 @@
           </div>
         </li>
         <li class="timeline-item">
-          <span class="timeline-date">2022 → now</span>
+          <span class="timeline-date">Dec 2023 → now</span>
           <div class="timeline-content">
             <h3>IT Systems Engineer — Norfund</h3>
             <p>
@@ -127,7 +212,7 @@
           </div>
         </li>
         <li class="timeline-item">
-          <span class="timeline-date">Before 2022</span>
+          <span class="timeline-date">Before Dec 2023</span>
           <div class="timeline-content">
             <h3>IT Support &amp; ICT Trade Certificate</h3>
             <p>
@@ -137,100 +222,6 @@
           </div>
         </li>
       </ol>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section wrap">
-      <p class="eyebrow">03 — projects</p>
-      <h2>Things I've built</h2>
-      <div class="project-grid">
-
-        <article class="project-card">
-          <div class="project-head">
-            <h3>Internal AI Support Tool</h3>
-            <span class="badge badge-live">in production</span>
-          </div>
-          <p>
-            Flask web app for IT support with AI-assisted case handling,
-            communication threads, and automatic summaries. Built from
-            scratch, including integration with the internal ticketing system.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Python / Flask</span>
-            <span class="tag">Jinja2</span>
-            <span class="tag">AI integration</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head">
-            <h3>PC Provisioning Script</h3>
-            <span class="badge badge-live">in production</span>
-          </div>
-          <p>
-            PowerShell script for automated setup of company laptops —
-            including registry configuration, software installation, and a
-            live HTML dashboard showing install progress.
-          </p>
-          <div class="tag-row">
-            <span class="tag">PowerShell</span>
-            <span class="tag">Automation</span>
-            <span class="tag">Windows</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head">
-            <h3>MCP Integrations</h3>
-            <span class="badge badge-live">in production</span>
-          </div>
-          <p>
-            Built and documented several internal MCP services connecting
-            AI tools to systems such as Microsoft Graph and Power BI, to
-            automate IT operations tasks.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Node.js</span>
-            <span class="tag">MCP</span>
-            <span class="tag">Azure</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head">
-            <h3>Covenant AI</h3>
-            <span class="badge badge-live">in production</span>
-          </div>
-          <p>
-            Developed Python automation for report processing and file
-            handling, while contributing to Azure DevOps pipelines and
-            Databricks/Data Factory workflows alongside the dev team.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Python</span>
-            <span class="tag">Azure DevOps</span>
-            <span class="tag">Databricks</span>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-head">
-            <h3>data2410-api-v1</h3>
-            <span class="badge badge-progress">in progress</span>
-          </div>
-          <p>
-            School project: REST API built in .NET, with SQL Server running
-            in Docker. Part of the bachelor's program in computer engineering
-            at OsloMet.
-          </p>
-          <div class="tag-row">
-            <span class="tag">.NET</span>
-            <span class="tag">SQL Server</span>
-            <span class="tag">Docker</span>
-          </div>
-        </article>
-
-      </div>
     </section>
 
     <!-- SKILLS -->
