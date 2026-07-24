@@ -44,7 +44,7 @@ app.post("/api/contact", (req, res) => {
   if (!name || !email || !message) {
     return res.status(400).json({
       ok: false,
-      error: "Navn, e-post og melding er påkrevd.",
+      error: "Name, email, and message are required.",
     });
   }
 
@@ -52,7 +52,7 @@ app.post("/api/contact", (req, res) => {
   if (!emailPattern.test(email)) {
     return res.status(400).json({
       ok: false,
-      error: "Ugyldig e-postadresse.",
+      error: "Invalid email address.",
     });
   }
 
@@ -75,7 +75,7 @@ app.post("/api/contact", (req, res) => {
   log.push(entry);
   fs.writeFileSync(logPath, JSON.stringify(log, null, 2));
 
-  console.log(`Ny henvendelse fra ${name} <${email}>`);
+  console.log(`New inquiry from ${name} <${email}>`);
 
   res.json({ ok: true });
 });

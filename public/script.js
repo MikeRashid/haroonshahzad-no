@@ -1,6 +1,6 @@
 // script.js
-// 1) Henter live status fra /api/status og fyller statusstripen + hero-tall
-// 2) Sender kontaktskjemaet til /api/contact uten å laste siden på nytt
+// 1) Fetches live status from /api/status and fills the status bar + hero stats
+// 2) Submits the contact form to /api/contact without a page reload
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -8,20 +8,20 @@ async function loadStatus() {
   const statusText = document.getElementById("status-text");
   try {
     const res = await fetch("/api/status");
-    if (!res.ok) throw new Error("Status-kall feilet");
+    if (!res.ok) throw new Error("Status request failed");
     const data = await res.json();
 
     const minutes = Math.floor(data.uptimeSeconds / 60);
     statusText.textContent =
-      `${data.status} — ${data.domain} — oppe i ${minutes} min — siste deploy ${data.lastDeploy}`;
+      `${data.status} — ${data.domain} — up ${minutes} min — last deploy ${data.lastDeploy}`;
 
     const yearsIt = document.getElementById("stat-years-it");
     const yearsNorfund = document.getElementById("stat-years-norfund");
     if (yearsIt) yearsIt.textContent = `${data.yearsInIT}+`;
     if (yearsNorfund) yearsNorfund.textContent = `${data.yearsAtNorfund}+`;
   } catch (err) {
-    // Faller tilbake til statisk tekst hvis backend ikke er tilgjengelig
-    statusText.textContent = "STATISK MODUS — backend ikke tilkoblet";
+    // Falls back to static text if the backend isn't reachable
+    statusText.textContent = "STATIC MODE — backend not connected";
   }
 }
 
@@ -43,7 +43,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   submitBtn.disabled = true;
-  submitBtn.textContent = "Sender…";
+  submitBtn.textContent = "Sending…";
 
   try {
     const res = await fetch("/api/contact", {
@@ -54,18 +54,18 @@ form.addEventListener("submit", async (e) => {
     const data = await res.json();
 
     if (data.ok) {
-      formStatus.textContent = "Sendt! Takk for meldingen.";
+      formStatus.textContent = "Sent! Thanks for your message.";
       formStatus.classList.add("ok");
       form.reset();
     } else {
-      formStatus.textContent = data.error || "Noe gikk galt.";
+      formStatus.textContent = data.error || "Something went wrong.";
       formStatus.classList.add("error");
     }
   } catch (err) {
-    formStatus.textContent = "Kunne ikke nå serveren. Prøv igjen senere.";
+    formStatus.textContent = "Couldn't reach the server. Try again later.";
     formStatus.classList.add("error");
   } finally {
     submitBtn.disabled = false;
-    submitBtn.textContent = "Send melding";
+    submitBtn.textContent = "Send message";
   }
 });

@@ -161,6 +161,50 @@ textarea:focus-visible {
   padding: 96px 24px 72px;
 }
 
+.hero-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-photo-wrap {
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(1);
+  border: 2px solid var(--panel-border);
+  box-shadow: 0 0 0 6px var(--bg), 0 0 0 7px var(--panel-border);
+}
+
+@media (max-width: 800px) {
+  .hero-grid {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 32px;
+  }
+  .hero-photo {
+    width: 160px;
+    height: 160px;
+  }
+  .hero-stats {
+    justify-content: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+}
+
 .eyebrow {
   font-family: var(--font-mono);
   color: var(--accent-blue);
