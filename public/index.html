@@ -7,6 +7,8 @@
 <meta name="description" content="Haroon Shahzad — IT Systems Engineer at Norfund. Automation, AI integrations, Microsoft 365 and Azure." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="en" href="https://haroonshahzad.no/" />
+<link rel="alternate" hreflang="no" href="https://haroonshahzad.no/no" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,10 +22,12 @@
     <div class="wrap header-inner">
       <a href="#top" class="wordmark">Haroon Shahzad</a>
       <nav class="nav">
-        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
         <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+        <a href="/no" class="lang-switch" hreflang="no">NO</a>
       </nav>
     </div>
   </header>
@@ -55,87 +59,20 @@
     <section id="about" class="band wrap">
       <p class="section-label">About</p>
       <div class="prose">
-        <p>
-          I'm an IT professional with broad experience in enterprise operations
-          and systems administration. Over the past few years my role has moved
-          from traditional IT support into automation, AI implementation,
-          Microsoft&nbsp;365 administration, and internal software development.
+        <p class="prose-lead">
+          I started in IT support and moved steadily toward building things.
         </p>
         <p>
-          What I enjoy most is building internal tools that take a slow, manual
-          process and make it quick and repeatable — then documenting it well
-          enough that the rest of the team can pick it up without me.
+          Today my work sits between operations and development: automation,
+          AI integrations, Microsoft&nbsp;365 administration and internal tools.
+          I'm finishing a bachelor's in computer engineering alongside the job.
+        </p>
+        <p>
+          What I enjoy most is taking a slow, manual process and making it quick
+          and repeatable — then documenting it well enough that the rest of the
+          team can pick it up without me.
         </p>
       </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="band wrap">
-      <p class="section-label">Selected work</p>
-
-      <article class="entry">
-        <div class="entry-meta">
-          <span class="entry-status">In production</span>
-        </div>
-        <div class="entry-body">
-          <h3>MCP Integrations</h3>
-          <p>
-            A suite of internal MCP servers connecting Claude to core business
-            systems: Microsoft Graph for identity, PIM and device management,
-            Power BI for report querying, M-Files for document access, and email
-            security tooling for phishing triage. I solved the cross-platform
-            authentication issues and shipped PowerShell installers so the rest
-            of the IT team could adopt them without manual setup.
-          </p>
-          <p class="entry-tech">Node.js · MCP · Microsoft Graph · Power BI · Azure</p>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">
-          <span class="entry-status">In production</span>
-        </div>
-        <div class="entry-body">
-          <h3>Internal AI Support Tool</h3>
-          <p>
-            A Flask web app for IT support with AI-assisted case handling,
-            communication threads and automatic summaries. Built from scratch,
-            including the integration with our ticketing system.
-          </p>
-          <p class="entry-tech">Python · Flask · Jinja2 · AI integration</p>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">
-          <span class="entry-status">In production</span>
-        </div>
-        <div class="entry-body">
-          <h3>Covenant AI</h3>
-          <p>
-            Python automation for report processing and file handling, plus
-            contributions to Azure DevOps pipelines and Databricks/Data Factory
-            workflows alongside the development team.
-          </p>
-          <p class="entry-tech">Python · Azure DevOps · Databricks</p>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-meta">
-          <span class="entry-status">In production</span>
-        </div>
-        <div class="entry-body">
-          <h3>This site</h3>
-          <p>
-            haroonshahzad.no runs on a Node/Express backend with a live status
-            API and a working contact form, containerized with Docker and
-            deployed on Render behind a custom domain.
-            <a href="https://github.com/MikeRashid/haroonshahzad-no" target="_blank" rel="noopener" class="inline-link">Source on GitHub</a>
-          </p>
-          <p class="entry-tech">Node.js · Express · Docker · Render</p>
-        </div>
-      </article>
     </section>
 
     <!-- EXPERIENCE -->
@@ -147,14 +84,12 @@
         <div class="cv-content">
           <h3>Expanded scope: automation, AI &amp; integrations</h3>
           <p class="cv-org">Norfund</p>
-          <p>
-            Designed and extended an internal AI-powered support platform
-            integrating ticketing, Teams and Confluence. Manage the
-            organization's AI rollout end to end — licensing, access and
-            training follow-up. Built MCP integrations against internal systems
-            and contributed to an Azure DevOps/Power Apps project with CI/CD
-            pipelines.
-          </p>
+          <ul class="cv-list">
+            <li>Designed and extended an internal AI-powered support platform integrating ticketing, Teams and Confluence</li>
+            <li>Manage the organization's AI rollout end to end — licensing, access and training follow-up</li>
+            <li>Built MCP integrations connecting AI tools to internal systems</li>
+            <li>Contributed to an Azure DevOps and Power Apps project with CI/CD pipelines</li>
+          </ul>
         </div>
       </div>
 
@@ -163,13 +98,13 @@
         <div class="cv-content">
           <h3>IT Systems Engineer</h3>
           <p class="cv-org">Norfund</p>
-          <p>
-            Azure and Entra ID administration, Intune device management, access
-            control, onboarding and offboarding, policy work and PowerShell
-            automation. Took the initiative to bring tasks previously outsourced
-            in-house, and to standardize documentation and case-handling routines
-            across the IT team.
-          </p>
+          <ul class="cv-list">
+            <li>Azure and Entra ID administration, access control, onboarding and offboarding</li>
+            <li>Intune device management and policy work across Windows, Mac and mobile</li>
+            <li>PowerShell automation for provisioning and recurring operations tasks</li>
+            <li>Brought tasks previously outsourced in-house by building internal expertise</li>
+            <li>Standardized documentation and case-handling routines across the IT team</li>
+          </ul>
         </div>
       </div>
 
@@ -188,33 +123,6 @@
           <h3>IT Consultant</h3>
           <p class="cv-org">Norwegian Defence Research Establishment (FFI)</p>
           <p>IT operations and support in a research and technology environment.</p>
-        </div>
-      </div>
-
-      <div class="cv-row">
-        <div class="cv-date">2016</div>
-        <div class="cv-content">
-          <h3>Incident Manager</h3>
-          <p class="cv-org">People4you / NMD</p>
-          <p>Incident management and IT operations support.</p>
-        </div>
-      </div>
-
-      <div class="cv-row">
-        <div class="cv-date">2015 — 2016</div>
-        <div class="cv-content">
-          <h3>Application Manager</h3>
-          <p class="cv-org">Norwegian Institute of Public Health (FHI)</p>
-          <p>Application administration and support.</p>
-        </div>
-      </div>
-
-      <div class="cv-row">
-        <div class="cv-date">2013 — 2015</div>
-        <div class="cv-content">
-          <h3>ICT Apprentice</h3>
-          <p class="cv-org">Norwegian Institute of Public Health (FHI)</p>
-          <p>Vocational apprenticeship in ICT service.</p>
         </div>
       </div>
     </section>
@@ -244,6 +152,187 @@
           <p>Completed with top distinction.</p>
         </div>
       </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="band wrap">
+      <p class="section-label">Selected work</p>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-status">In production</span>
+        </div>
+        <div class="entry-body">
+          <h3>MCP Integrations</h3>
+          <p>
+            A suite of internal MCP servers connecting Claude to the systems the
+            IT team works in every day.
+          </p>
+          <ul class="cv-list">
+            <li>Microsoft Graph — identity, PIM and device management</li>
+            <li>Power BI — report querying</li>
+            <li>M-Files — document and vault access</li>
+            <li>Email security tooling — phishing and spam triage</li>
+          </ul>
+          <p>
+            I solved the cross-platform authentication issues and shipped
+            PowerShell installers so the team could adopt them without manual
+            setup.
+          </p>
+          <button class="read-more" type="button" aria-expanded="false" data-more="Read more" data-less="Show less">Read more</button>
+          <div class="entry-more" hidden>
+            <h4>Why</h4>
+            <p>
+              IT operations work spans a lot of systems. Looking up a user's
+              group memberships, checking a device's compliance state, pulling a
+              figure from a report and reviewing a quarantined email each meant
+              a different portal. The integrations remove that context switching.
+            </p>
+            <h4>How it works</h4>
+            <p>
+              Each integration is a separate MCP server exposing a focused set of
+              tools — read operations by default, with write operations gated
+              behind explicit confirmation. Authentication runs through Entra ID
+              app registrations with least-privilege scopes, and privileged
+              actions require an active PIM role.
+            </p>
+            <h4>Problems worth mentioning</h4>
+            <ul class="cv-list">
+              <li>A third-party package wrote diagnostic output to stdout, which corrupted the protocol handshake. I patched it with a PowerShell script that runs as part of setup.</li>
+              <li>Identity mismatches where a connector authenticated as the standard user rather than the elevated admin account, causing intermittent permission errors on privileged calls.</li>
+              <li>Windows-specific path and runtime issues that don't appear when developing on macOS.</li>
+            </ul>
+            <h4>Rollout</h4>
+            <p>
+              Some servers run locally, others are hosted in Azure App Service.
+              Each has a documented query playbook on Confluence so colleagues can
+              use them without needing to understand the implementation.
+            </p>
+          </div>
+          <p class="entry-tech">Node.js · MCP · Microsoft Graph · Power BI · Azure</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-status">In production</span>
+        </div>
+        <div class="entry-body">
+          <h3>Internal AI Support Tool</h3>
+          <p>
+            A Flask web app for IT support, built from scratch — including the
+            integration with our ticketing system.
+          </p>
+          <ul class="cv-list">
+            <li>AI-assisted case handling and drafting</li>
+            <li>Communication threads in one view</li>
+            <li>Automatic case summaries</li>
+          </ul>
+          <button class="read-more" type="button" aria-expanded="false" data-more="Read more" data-less="Show less">Read more</button>
+          <div class="entry-more" hidden>
+            <h4>Architecture</h4>
+            <p>
+              A Flask backend split into service modules — one per integration:
+              ticketing, privileged access management, and documentation. The
+              frontend is a single Jinja2 template with vanilla JavaScript and a
+              dark theme, kept deliberately simple so there's no build step to
+              maintain.
+            </p>
+            <h4>What the AI layer does</h4>
+            <ul class="cv-list">
+              <li>Drafts replies from a short description, in the right tone and language</li>
+              <li>Suggests a category and priority for incoming cases</li>
+              <li>Summarizes long communication threads so you can pick up a case someone else started</li>
+            </ul>
+            <h4>Integration details</h4>
+            <p>
+              The ticketing API had some non-obvious semantics — message type
+              rather than direction determines whether a note is an agent reply or
+              a user message, and the sender ID is not the same as the requester
+              ID. Getting those wrong produced threads that looked correct but
+              attributed messages to the wrong person. Privileged role activation
+              runs through Microsoft Graph directly from the tool.
+            </p>
+          </div>
+          <p class="entry-tech">Python · Flask · Jinja2 · AI integration</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-status">In production</span>
+        </div>
+        <div class="entry-body">
+          <h3>Covenant AI</h3>
+          <p>
+            Python automation for report processing and file handling, plus
+            contributions to Azure DevOps pipelines and Databricks/Data Factory
+            workflows alongside the development team.
+          </p>
+          <button class="read-more" type="button" aria-expanded="false" data-more="Read more" data-less="Show less">Read more</button>
+          <div class="entry-more" hidden>
+            <h4>My role</h4>
+            <p>
+              This sat outside my normal scope — a technical project alongside the
+              internal development team, which meant learning their toolchain
+              rather than bringing my own.
+            </p>
+            <h4>What I built</h4>
+            <ul class="cv-list">
+              <li>Python scripts to locate and process the relevant files and reports feeding into AI analysis</li>
+              <li>Automation of the data flow between systems, replacing manual steps</li>
+              <li>Debugging of integrations where data arrived in the wrong shape or not at all</li>
+            </ul>
+            <h4>Environment</h4>
+            <p>
+              Azure DevOps for source control and pipelines, Data Factory for
+              orchestration, Databricks for processing, and Power Apps on the
+              front end. Documented the technical solution so it didn't depend on
+              me being available.
+            </p>
+          </div>
+          <p class="entry-tech">Python · Azure DevOps · Databricks</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="entry-status">In production</span>
+        </div>
+        <div class="entry-body">
+          <h3>This site</h3>
+          <p>
+            haroonshahzad.no runs on a Node/Express backend with a live status
+            API and a working contact form, containerized with Docker and
+            deployed on Render behind a custom domain.
+            <a href="https://github.com/MikeRashid/haroonshahzad-no" target="_blank" rel="noopener" class="inline-link">Source on GitHub</a>
+          </p>
+          <button class="read-more" type="button" aria-expanded="false" data-more="Read more" data-less="Show less">Read more</button>
+          <div class="entry-more" hidden>
+            <h4>Backend</h4>
+            <p>
+              Express serves the static frontend plus two endpoints:
+              <code>/api/status</code>, which drives the live status bar at the
+              top of the page, and <code>/api/contact</code>, which validates and
+              stores form submissions.
+            </p>
+            <h4>Deployment</h4>
+            <ul class="cv-list">
+              <li>Containerized with a small Alpine-based Docker image</li>
+              <li>Hosted on Render, with automatic deploys on every push to main</li>
+              <li>Custom domain configured through A and CNAME records, with HTTPS certificates issued automatically</li>
+            </ul>
+            <h4>Bilingual setup</h4>
+            <p>
+              English and Norwegian are separate pages sharing one stylesheet and
+              one script. The script reads the <code>lang</code> attribute on the
+              page and picks its strings accordingly, so there's no duplicated
+              JavaScript and no client-side translation layer.
+            </p>
+          </div>
+          <p class="entry-tech">Node.js · Express · Docker · Render</p>
+        </div>
+      </article>
     </section>
 
     <!-- SKILLS -->

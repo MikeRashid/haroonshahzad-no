@@ -1,14 +1,14 @@
 :root {
-  --bg: #fcfcfb;
-  --surface: #f4f4f1;
-  --border: #e3e3de;
-  --border-strong: #cfcfc8;
-  --text: #1a1c20;
-  --text-soft: #4a4f57;
-  --muted: #767b83;
-  --accent: #1a4f8a;
-  --accent-hover: #123a68;
-  --green: #197f52;
+  --bg: #12151a;
+  --surface: #1b1f27;
+  --border: #2a2f3a;
+  --border-strong: #3a4150;
+  --text: #eef1f5;
+  --text-soft: #c3cad5;
+  --muted: #8b93a1;
+  --accent: #5b8def;
+  --amber: #f5a623;
+  --green: #3ecf8e;
 
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
@@ -48,13 +48,13 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--amber);
   outline-offset: 3px;
 }
 
 /* ---------- STATUS BAR ---------- */
 .statusbar {
-  background: var(--surface);
+  background: #0c0e12;
   border-bottom: 1px solid var(--border);
   color: var(--muted);
   font-family: var(--font-mono);
@@ -79,7 +79,7 @@ textarea:focus-visible {
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
-  background: rgba(252, 252, 251, .93);
+  background: rgba(18, 21, 26, .92);
   backdrop-filter: blur(8px);
   z-index: 10;
 }
@@ -105,17 +105,32 @@ textarea:focus-visible {
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 22px;
   flex-wrap: wrap;
 }
 
 .nav a {
-  color: var(--text-soft);
+  color: var(--muted);
   text-decoration: none;
   font-size: 15px;
 }
 
-.nav a:hover { color: var(--accent); }
+.nav a:hover { color: var(--text); }
+
+.lang-switch {
+  font-family: var(--font-mono);
+  font-size: 12.5px !important;
+  letter-spacing: .06em;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  padding: 3px 8px;
+}
+
+.lang-switch:hover {
+  border-color: var(--amber);
+  color: var(--amber) !important;
+}
 
 /* ---------- INTRO ---------- */
 .intro { padding: 84px 28px 72px; }
@@ -131,7 +146,7 @@ textarea:focus-visible {
   font-size: 13px;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
   margin: 0 0 18px;
 }
 
@@ -166,23 +181,24 @@ textarea:focus-visible {
   object-fit: cover;
   flex-shrink: 0;
   filter: grayscale(1);
+  border: 1px solid var(--border);
 }
 
 .btn {
   display: inline-block;
-  background: var(--text);
-  color: var(--bg);
+  background: var(--amber);
+  color: #14171c;
   padding: 11px 22px;
   border: 0;
   border-radius: 4px;
   font-family: var(--font-body);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   cursor: pointer;
 }
 
-.btn:hover { background: #2c3037; }
+.btn:hover { background: #ffb845; }
 
 .link-plain {
   color: var(--text-soft);
@@ -207,7 +223,7 @@ textarea:focus-visible {
   font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
   margin: 0 0 32px;
 }
 
@@ -218,6 +234,44 @@ textarea:focus-visible {
 }
 
 .prose p:last-child { margin-bottom: 0; }
+
+.prose-lead {
+  font-size: 19px;
+  color: var(--text) !important;
+  font-weight: 500;
+}
+
+/* Bulleted lists inside CV rows and project entries */
+.cv-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 64ch;
+}
+
+.cv-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cv-list li:last-child { margin-bottom: 0; }
+
+.cv-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 11px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+
+.entry-body .cv-list { margin: 0 0 14px; }
 
 /* ---------- PROJECT ENTRIES ---------- */
 .entry {
@@ -260,6 +314,56 @@ textarea:focus-visible {
   font-size: 13px;
   color: var(--muted) !important;
   margin-bottom: 0 !important;
+}
+
+/* ---------- READ MORE ---------- */
+.read-more {
+  display: inline-block;
+  margin: 2px 0 16px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--border-strong);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.read-more:hover { color: var(--amber); border-color: var(--amber); }
+
+.entry-more {
+  margin: 0 0 18px;
+  padding: 20px 0 4px;
+  border-top: 1px solid var(--border);
+}
+
+.entry-more h4 {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  margin: 22px 0 8px;
+}
+
+.entry-more h4:first-child { margin-top: 0; }
+
+.entry-more p {
+  color: var(--text-soft);
+  font-size: 16px;
+  margin: 0 0 12px;
+  max-width: 64ch;
+}
+
+.entry-more code {
+  font-family: var(--font-mono);
+  font-size: .88em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 5px;
 }
 
 /* ---------- CV ROWS ---------- */
@@ -314,6 +418,7 @@ textarea:focus-visible {
 .skills-columns h4 {
   font-size: 14px;
   font-weight: 600;
+  color: var(--text);
   margin: 0 0 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
@@ -352,7 +457,7 @@ textarea:focus-visible {
 label { font-size: 14px; color: var(--muted); }
 
 input, textarea {
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border-strong);
   border-radius: 4px;
   color: var(--text);
@@ -367,7 +472,7 @@ input:focus, textarea:focus { border-color: var(--accent); }
 
 .form-status { font-size: 14.5px; min-height: 20px; margin: 0; }
 .form-status.ok { color: var(--green); }
-.form-status.error { color: #b4232a; }
+.form-status.error { color: #f4767d; }
 
 /* ---------- FOOTER ---------- */
 .site-footer {
