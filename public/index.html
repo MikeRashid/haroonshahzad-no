@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Haroon Shahzad — IT/DevOps &amp; Platform Engineering</title>
+<meta name="description" content="Haroon (Mike) Shahzad — IT/DevOps ved Norfund, student i datateknikk ved OsloMet." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- STATUS-STRIPE: signaturelementet. Hentes live fra /api/status -->
+  <div class="statusbar" id="statusbar">
+    <span class="dot" aria-hidden="true"></span>
+    <span id="status-text">SJEKKER STATUS…</span>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <span class="logo">HS<span class="logo-dot">.</span>NO</span>
+      <nav class="nav">
+        <a href="#om">Om</a>
+        <a href="#erfaring">Erfaring</a>
+        <a href="#prosjekter">Prosjekter</a>
+        <a href="#ferdigheter">Ferdigheter</a>
+        <a href="#kontakt" class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero wrap">
+      <p class="eyebrow">// it &amp; devops — platform engineering</p>
+      <h1>Haroon Shahzad</h1>
+      <p class="hero-sub">
+        Jeg bygger og drifter IT-infrastruktur, automatiserer det som kan automatiseres,
+        og er på vei mot en karriere innen pipelines og platform engineering.
+        Til daglig: IT/DevOps ved <strong>Norfund</strong>. Ved siden av: bachelor i
+        datateknikk ved <strong>OsloMet</strong>.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" id="stat-years-it">8+</span>
+          <span class="stat-label">år i IT</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="stat-years-norfund">2+</span>
+          <span class="stat-label">år hos Norfund</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">2/3</span>
+          <span class="stat-label">år fullført, bachelor datateknikk</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#kontakt" class="btn btn-primary">Ta kontakt</a>
+        <a href="#prosjekter" class="btn btn-ghost">Se prosjekter</a>
+      </div>
+    </section>
+
+    <!-- OM -->
+    <section id="om" class="section wrap">
+      <p class="eyebrow">01 — om meg</p>
+      <h2>Fra support til platform engineering</h2>
+      <p class="body-text">
+        Jeg startet i IT-support og har siden bygget videre på det med et fagbrev i IKT
+        (meget godt bestått) og åtte års praktisk erfaring. Nå jobber jeg med
+        Azure/Entra ID-administrasjon, Intune, ticketing, scripting og intern
+        verktøybygging — og tar samtidig en bachelor i datateknikk for å formalisere og
+        utvide det tekniske grunnlaget. Målet er en karriere der jeg bygger pipelines og
+        plattformer andre team kan stole på, ikke bare drifter dem.
+      </p>
+    </section>
+
+    <!-- ERFARING: git-log / deploy-log stil, kronologisk rekkefølge er reell info -->
+    <section id="erfaring" class="section wrap">
+      <p class="eyebrow">02 — erfaring</p>
+      <h2>Deploy-logg</h2>
+      <ol class="timeline">
+        <li class="timeline-item">
+          <span class="timeline-date">2022 → nå</span>
+          <div class="timeline-content">
+            <h3>IT/DevOps — Norfund</h3>
+            <p>
+              Azure/Entra ID-administrasjon, Intune-enhetsforvaltning, IT-support via
+              Pureservice, PowerShell-automatisering og intern verktøybygging
+              (bl.a. AI-støttet støtteverktøy og interne integrasjoner).
+              Jobber mot en teknisk karrierevei innen pipelines og platform engineering.
+            </p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">Pågår</span>
+          <div class="timeline-content">
+            <h3>Bachelor i datateknikk — OsloMet</h3>
+            <p>
+              Andre år av en treårig bachelor. Bygger videre på praktisk IT-erfaring
+              med formell programmering, systemarkitektur og databaser.
+            </p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-date">Før 2022</span>
+          <div class="timeline-content">
+            <h3>IT-support &amp; fagbrev IKT</h3>
+            <p>
+              Åtte års praktisk IT-erfaring før Norfund, fullført med vokasjonelt
+              fagbrev i IKT (meget godt bestått).
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PROSJEKTER -->
+    <section id="prosjekter" class="section wrap">
+      <p class="eyebrow">03 — prosjekter</p>
+      <h2>Ting jeg har bygget</h2>
+      <div class="project-grid">
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Internt AI-støtteverktøy</h3>
+            <span class="badge badge-live">i drift</span>
+          </div>
+          <p>
+            Flask-webapp for IT-support med AI-assistert saksbehandling,
+            kommunikasjonstråder og automatiske oppsummeringer. Bygget fra bunnen,
+            inkludert integrasjon mot internt ticketingsystem.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Python / Flask</span>
+            <span class="tag">Jinja2</span>
+            <span class="tag">AI-integrasjon</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>PC-provisjoneringsscript</h3>
+            <span class="badge badge-live">i drift</span>
+          </div>
+          <p>
+            PowerShell-script for automatisert oppsett av bedriftslaptoper —
+            inkludert registerkonfigurasjon, programvareinstallasjon og et
+            live HTML-dashboard som viser fremdrift under installasjon.
+          </p>
+          <div class="tag-row">
+            <span class="tag">PowerShell</span>
+            <span class="tag">Automatisering</span>
+            <span class="tag">Windows</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>MCP-integrasjoner</h3>
+            <span class="badge badge-live">i drift</span>
+          </div>
+          <p>
+            Bygget og dokumentert flere interne MCP-tjenester som kobler AI-verktøy
+            mot systemer som Microsoft Graph og Power BI, for å automatisere
+            IT-drift-oppgaver.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Node.js</span>
+            <span class="tag">MCP</span>
+            <span class="tag">Azure</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>data2410-api-v1</h3>
+            <span class="badge badge-progress">pågående</span>
+          </div>
+          <p>
+            Skoleprosjekt: REST-API bygget i .NET, med SQL Server i Docker.
+            Del av bachelorstudiet i datateknikk ved OsloMet.
+          </p>
+          <div class="tag-row">
+            <span class="tag">.NET</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Docker</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FERDIGHETER -->
+    <section id="ferdigheter" class="section wrap">
+      <p class="eyebrow">04 — ferdigheter</p>
+      <h2>Verktøykassa</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Drift &amp; administrasjon</h3>
+          <p>Azure / Entra ID, Intune, Pureservice, PIM, RBAC</p>
+        </div>
+        <div class="skill-group">
+          <h3>Automatisering</h3>
+          <p>PowerShell, Bash, CI/CD, Power Automate</p>
+        </div>
+        <div class="skill-group">
+          <h3>Utvikling</h3>
+          <p>Python (Flask), .NET, Node.js, SQL, Docker</p>
+        </div>
+        <div class="skill-group">
+          <h3>Dokumentasjon</h3>
+          <p>Confluence, Jira, teknisk skriving</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="section wrap">
+      <p class="eyebrow">05 — kontakt</p>
+      <h2>Ta kontakt</h2>
+      <p class="body-text">
+        Send en melding — den går til en enkel backend jeg har bygget for denne siden.
+      </p>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Navn</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="email">E-post</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="message">Melding</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Send melding</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Haroon Shahzad — haroonshahzad.no</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

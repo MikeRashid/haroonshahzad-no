@@ -1,0 +1,13 @@
+{
+  "name": "haroonshahzad-no",
+  "version": "1.0.0",
+  "description": "Personlig CV/portefølje-side for Haroon (Mike) Shahzad",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
