@@ -53,46 +53,117 @@ function removeOldEducation() {
   });
 }
 
+function refineAbout() {
+  const section = document.querySelector(isNorwegian ? "#om" : "#about");
+  const prose = section?.querySelector(".prose");
+  if (!prose) return;
+
+  prose.innerHTML = isNorwegian
+    ? `<p class="prose-lead">Jeg kombinerer solid erfaring fra IT-drift og brukerstøtte med automatisering, skyplattformer og intern utvikling.</p>
+       <p>Jeg har arbeidet i miljøer med høye krav til stabilitet, sikkerhet, konfidensialitet og dokumentasjon, blant annet i Politiets IKT-tjenester, Forsvarets forskningsinstitutt og Norfund.</p>
+       <p>I dag jobber jeg i skjæringspunktet mellom drift, identitets- og tilgangsstyring, klientforvaltning, automatisering og dataplattformer. Jeg motiveres av å gjøre manuelle prosesser mer stabile, skalerbare og effektive, og dokumentere løsningene slik at de kan brukes og videreutvikles av andre.</p>`
+    : `<p class="prose-lead">I combine a strong background in IT operations and support with automation, cloud platforms and internal development.</p>
+       <p>I have worked in environments with high requirements for stability, security, confidentiality and documentation, including the Norwegian Police IT Services, the Norwegian Defence Research Establishment and Norfund.</p>
+       <p>Today I work across operations, identity and access management, endpoint management, automation and data platforms. I am motivated by turning manual processes into stable, scalable and efficient solutions, then documenting them so others can use and develop them further.</p>`;
+}
+
 function refineExperience() {
   const section = document.querySelector(isNorwegian ? "#erfaring" : "#experience");
   if (!section) return;
 
-  const rows = Array.from(section.querySelectorAll(":scope > .cv-row"));
-  if (rows.length < 2) return;
+  const label = section.querySelector(".section-label");
+  section.innerHTML = "";
+  if (label) section.appendChild(label);
 
-  const first = rows[0];
-  const second = rows[1];
-  const date = first.querySelector(".cv-date");
-  const content = first.querySelector(".cv-content");
-
-  if (date) date.textContent = isNorwegian ? "Des 2023 —" : "Dec 2023 —";
-  if (content) {
-    content.innerHTML = isNorwegian
-      ? `<h3>IT Systems Engineer</h3>
-         <p class="cv-org">Norfund</p>
-         <p>Ansvarsområdet ble utvidet i 2026 til å omfatte mer automatisering, AI-integrasjoner og intern utvikling.</p>
-         <ul class="cv-list">
-           <li>Azure-, Entra ID- og Intune-forvaltning, tilgangsstyring, onboarding og offboarding</li>
-           <li>PowerShell-automatisering og standardisering av gjentakende driftsoppgaver</li>
-           <li>Utvikling av CODEC, MCP-integrasjoner og andre interne støtteverktøy</li>
-           <li>Forvaltning av AI-lisenser, tilgang og teknisk oppfølging</li>
-           <li>Bidrag til Azure DevOps-, Power Apps- og CI/CD-arbeid</li>
-           <li>Hentet tekniske oppgaver inn i teamet og reduserte avhengigheten av eksterne leverandører</li>
-         </ul>`
-      : `<h3>IT Systems Engineer</h3>
-         <p class="cv-org">Norfund</p>
-         <p>Scope expanded in 2026 to include more automation, AI integrations and internal development.</p>
-         <ul class="cv-list">
-           <li>Azure, Entra ID and Intune administration, access management, onboarding and offboarding</li>
-           <li>PowerShell automation and standardisation of recurring operations work</li>
-           <li>Development of CODEC, MCP integrations and other internal support tools</li>
-           <li>Management of AI licensing, access and technical follow-up</li>
-           <li>Contributions to Azure DevOps, Power Apps and CI/CD work</li>
-           <li>Brought technical work in-house and reduced reliance on external vendors</li>
-         </ul>`;
-  }
-
-  second.remove();
+  section.insertAdjacentHTML("beforeend", isNorwegian
+    ? `<div class="cv-row">
+         <div class="cv-date">Sep 2025 —</div>
+         <div class="cv-content">
+           <h3>IT Associate</h3>
+           <p class="cv-org">Norfund</p>
+           <p>Jobber med IT-drift, sikkerhet og kontinuerlig forbedring i et moderne Microsoft-miljø, kombinert med teknisk implementasjon og automatisering.</p>
+           <ul class="cv-list">
+             <li>Microsoft 365, Entra ID, Intune, Admin Center og tilgangsstyring</li>
+             <li>Klientforvaltning, policyarbeid, applikasjonshåndtering og enhetssikkerhet</li>
+             <li>Teknisk brukerstøtte, feilsøking og hendelseshåndtering</li>
+             <li>Dokumentasjon, rutiner og kunnskapsartikler i Confluence og supportsystemer</li>
+             <li>Automatisering, CODEC, MCP-integrasjoner og forbedring av interne IT-prosesser</li>
+           </ul>
+         </div>
+       </div>
+       <div class="cv-row">
+         <div class="cv-date">Des 2023 — Sep 2025</div>
+         <div class="cv-content">
+           <h3>Konsulent</h3>
+           <p class="cv-org">Norfund · Temp-Team</p>
+           <p>Innleid konsulent med ansvar for 1. og 2. linje brukerstøtte, teknisk saksbehandling og daglig IT-drift.</p>
+           <ul class="cv-list">
+             <li>Microsoft 365, klientutstyr, tilgangsstyring og interne systemer</li>
+             <li>ITIL-basert hendelseshåndtering, prioritering og oppfølging</li>
+             <li>Samarbeid med interne brukere, leverandører og tekniske ressurser</li>
+           </ul>
+         </div>
+       </div>
+       <div class="cv-row">
+         <div class="cv-date">Apr 2019 — Sep 2022</div>
+         <div class="cv-content">
+           <h3>Rådgiver</h3>
+           <p class="cv-org">Politiets IKT-tjenester</p>
+           <p>2. linje brukerstøtte, sakshåndtering og koordinering i et miljø med høye krav til sikkerhet, kvalitet og stabilitet.</p>
+         </div>
+       </div>
+       <div class="cv-row">
+         <div class="cv-date">Jun 2016 — Apr 2019</div>
+         <div class="cv-content">
+           <h3>Brukerstøtte og administrasjon</h3>
+           <p class="cv-org">Forsvarets forskningsinstitutt (FFI)</p>
+           <p>Brukeradministrasjon, klientutstyr, teknisk drift og sikker håndtering av utstyr i et forsknings- og sikkerhetsmiljø.</p>
+         </div>
+       </div>`
+    : `<div class="cv-row">
+         <div class="cv-date">Sep 2025 —</div>
+         <div class="cv-content">
+           <h3>IT Associate</h3>
+           <p class="cv-org">Norfund</p>
+           <p>IT operations, security and continuous improvement in a modern Microsoft environment, combined with technical implementation and automation.</p>
+           <ul class="cv-list">
+             <li>Microsoft 365, Entra ID, Intune, Admin Center and access management</li>
+             <li>Endpoint management, policies, application deployment and device security</li>
+             <li>Technical support, troubleshooting and incident handling</li>
+             <li>Documentation, procedures and knowledge articles in Confluence and support systems</li>
+             <li>Automation, CODEC, MCP integrations and improvement of internal IT processes</li>
+           </ul>
+         </div>
+       </div>
+       <div class="cv-row">
+         <div class="cv-date">Dec 2023 — Sep 2025</div>
+         <div class="cv-content">
+           <h3>IT Consultant</h3>
+           <p class="cv-org">Norfund · Temp-Team</p>
+           <p>Contracted consultant responsible for first- and second-line support, technical case handling and daily IT operations.</p>
+           <ul class="cv-list">
+             <li>Microsoft 365, endpoint equipment, access management and internal systems</li>
+             <li>ITIL-based incident handling, prioritisation and follow-up</li>
+             <li>Collaboration with internal users, vendors and technical resources</li>
+           </ul>
+         </div>
+       </div>
+       <div class="cv-row">
+         <div class="cv-date">Apr 2019 — Sep 2022</div>
+         <div class="cv-content">
+           <h3>IT Advisor</h3>
+           <p class="cv-org">Norwegian Police IT Services</p>
+           <p>Second-line support, case handling and coordination in an environment with high requirements for security, quality and stability.</p>
+         </div>
+       </div>
+       <div class="cv-row">
+         <div class="cv-date">Jun 2016 — Apr 2019</div>
+         <div class="cv-content">
+           <h3>IT Support and Administration</h3>
+           <p class="cv-org">Norwegian Defence Research Establishment (FFI)</p>
+           <p>User administration, endpoint equipment, technical operations and secure equipment handling in a research and security environment.</p>
+         </div>
+       </div>`);
 }
 
 function refineEducation() {
@@ -116,11 +187,9 @@ function refineProjects() {
     const list = mcpEntry.querySelector(".entry-body > ul.cv-list");
     const more = mcpEntry.querySelector(".entry-more");
 
-    if (intro) {
-      intro.textContent = isNorwegian
-        ? "En samling MCP-integrasjoner som lar godkjente AI-verktøy hente relevant informasjon fra forretningssystemer og reduserer manuelle oppslag og systembytter."
-        : "A suite of MCP integrations that lets approved AI tools retrieve relevant information from business systems, reducing manual lookups and context switching.";
-    }
+    if (intro) intro.textContent = isNorwegian
+      ? "En samling MCP-integrasjoner som lar godkjente AI-verktøy hente relevant informasjon fra forretningssystemer og reduserer manuelle oppslag og systembytter."
+      : "A suite of MCP integrations that lets approved AI tools retrieve relevant information from business systems, reducing manual lookups and context switching.";
 
     setList(list, isNorwegian
       ? [
@@ -136,11 +205,9 @@ function refineProjects() {
           "Email Security MCP — support for spam and phishing investigations",
         ]);
 
-    if (more) {
-      more.innerHTML = isNorwegian
-        ? `<h4>Resultat</h4><p>Integrasjonene samler informasjon som tidligere krevde flere portaler og manuelle oppslag. Jeg bygget oppsett, installasjon og dokumentasjon slik at løsningene kunne tas i bruk av resten av teamet.</p><h4>Min rolle</h4><p>Utvikling, feilsøking, utrulling og dokumentasjon, med fokus på kontrollert tilgang og enkel bruk for kollegaer.</p>`
-        : `<h4>Outcome</h4><p>The integrations bring together information that previously required several portals and manual lookups. I built the setup, installation and documentation so the rest of the team could adopt them.</p><h4>My role</h4><p>Development, troubleshooting, rollout and documentation, with a focus on controlled access and straightforward use for colleagues.</p>`;
-    }
+    if (more) more.innerHTML = isNorwegian
+      ? `<h4>Resultat</h4><p>Integrasjonene samler informasjon som tidligere krevde flere portaler og manuelle oppslag. Jeg bygget oppsett, installasjon og dokumentasjon slik at løsningene kunne tas i bruk av resten av teamet.</p><h4>Min rolle</h4><p>Utvikling, feilsøking, utrulling og dokumentasjon, med fokus på kontrollert tilgang og enkel bruk for kollegaer.</p>`
+      : `<h4>Outcome</h4><p>The integrations bring together information that previously required several portals and manual lookups. I built the setup, installation and documentation so the rest of the team could adopt them.</p><h4>My role</h4><p>Development, troubleshooting, rollout and documentation, with a focus on controlled access and straightforward use for colleagues.</p>`;
   }
 
   const codecEntry = entries.find((entry) => {
@@ -155,11 +222,9 @@ function refineProjects() {
     const more = codecEntry.querySelector(".entry-more");
 
     if (heading) heading.textContent = isNorwegian ? "CODEC — AI-plattform for IT-support" : "CODEC — AI Platform for IT Support";
-    if (intro) {
-      intro.textContent = isNorwegian
-        ? "En intern arbeidsflate jeg utviklet for å samle saksbehandling, kommunikasjon og AI-assistanse på ett sted, med Fox som innebygd AI-agent."
-        : "An internal workspace I developed to bring case handling, communication and AI assistance into one place, with Fox as the embedded AI agent.";
-    }
+    if (intro) intro.textContent = isNorwegian
+      ? "En intern arbeidsflate jeg utviklet for å samle saksbehandling, kommunikasjon og AI-assistanse på ett sted, med Fox som innebygd AI-agent."
+      : "An internal workspace I developed to bring case handling, communication and AI assistance into one place, with Fox as the embedded AI agent.";
 
     setList(list, isNorwegian
       ? [
@@ -173,11 +238,22 @@ function refineProjects() {
           "Automatic summaries, categorisation and prioritisation support",
         ]);
 
-    if (more) {
-      more.innerHTML = isNorwegian
-        ? `<h4>Utfordringen</h4><p>Saksbehandling krevde flere manuelle steg og bytte mellom ulike systemer.</p><h4>Løsningen</h4><p>CODEC samler relevant sakshistorikk, kommunikasjon og AI-funksjoner i én arbeidsflate. Jeg designet og utviklet løsningen, integrasjonene og Fox-agenten.</p><h4>Effekt</h4><p>Raskere oversikt, bedre utkast og mindre manuelt arbeid i den daglige saksbehandlingen.</p>`
-        : `<h4>Challenge</h4><p>Case handling required several manual steps and switching between different systems.</p><h4>Solution</h4><p>CODEC brings relevant case history, communication and AI capabilities into one workspace. I designed and developed the solution, its integrations and the Fox agent.</p><h4>Impact</h4><p>Faster case overview, stronger drafts and less manual work in day-to-day support.</p>`;
-    }
+    if (more) more.innerHTML = isNorwegian
+      ? `<h4>Utfordringen</h4><p>Saksbehandling krevde flere manuelle steg og bytte mellom ulike systemer.</p><h4>Løsningen</h4><p>CODEC samler relevant sakshistorikk, kommunikasjon og AI-funksjoner i én arbeidsflate. Jeg designet og utviklet løsningen, integrasjonene og Fox-agenten.</p><h4>Effekt</h4><p>Raskere oversikt, bedre utkast og mindre manuelt arbeid i den daglige saksbehandlingen.</p>`
+      : `<h4>Challenge</h4><p>Case handling required several manual steps and switching between different systems.</p><h4>Solution</h4><p>CODEC brings relevant case history, communication and AI capabilities into one workspace. I designed and developed the solution, its integrations and the Fox agent.</p><h4>Impact</h4><p>Faster case overview, stronger drafts and less manual work in day-to-day support.</p>`;
+  }
+
+  const covenantEntry = entries.find((entry) => entry.querySelector("h3")?.textContent.toLowerCase().includes("covenant"));
+  if (covenantEntry) {
+    const intro = covenantEntry.querySelector(".entry-body > p");
+    const more = covenantEntry.querySelector(".entry-more");
+    if (intro) intro.textContent = isNorwegian
+      ? "Bidrag til en AI-drevet ende-til-ende datapipeline for dokumentprosessering med M-Files, Azure Data Factory, Databricks, Azure OpenAI, Power Apps og Power BI."
+      : "Contributions to an AI-driven end-to-end data pipeline for document processing using M-Files, Azure Data Factory, Databricks, Azure OpenAI, Power Apps and Power BI.";
+
+    if (more) more.innerHTML = isNorwegian
+      ? `<h4>Mitt bidrag</h4><ul class="cv-list"><li>Automatisert dokumentflyt og AI-basert dataekstraksjon</li><li>Validering og strukturering av data før lagring i datavarehus</li><li>Dataflyt fra dokumentinntak til visualisering i Power BI</li><li>Forbedret datakvalitet, sporbarhet og effektivitet ved å erstatte manuelle steg</li></ul>`
+      : `<h4>My contribution</h4><ul class="cv-list"><li>Automated document flow and AI-based data extraction</li><li>Validation and structuring of data before storage in the data warehouse</li><li>Data flow from document intake through to Power BI visualisation</li><li>Improved data quality, traceability and efficiency by replacing manual steps</li></ul>`;
   }
 
   entries.forEach((entry) => {
@@ -193,8 +269,8 @@ function refineSkills() {
   if (!container) return;
 
   container.innerHTML = isNorwegian
-    ? `<div><h4>Kjernekompetanse</h4><ul><li>Microsoft 365</li><li>Azure og Entra ID</li><li>Intune</li><li>PowerShell</li><li>Microsoft Graph</li><li>IT-drift og automatisering</li></ul></div><div><h4>Utvikling og integrasjoner</h4><ul><li>Python og Flask</li><li>Node.js og Express</li><li>REST API-er</li><li>MCP-integrasjoner</li><li>SQL</li><li>Docker</li></ul></div><div><h4>Plattform og arbeidsmåte</h4><ul><li>Azure DevOps og CI/CD</li><li>Power Platform</li><li>PIM og RBAC</li><li>Confluence og teknisk dokumentasjon</li><li>Prosessforbedring</li></ul></div>`
-    : `<div><h4>Core expertise</h4><ul><li>Microsoft 365</li><li>Azure and Entra ID</li><li>Intune</li><li>PowerShell</li><li>Microsoft Graph</li><li>IT operations and automation</li></ul></div><div><h4>Development and integrations</h4><ul><li>Python and Flask</li><li>Node.js and Express</li><li>REST APIs</li><li>MCP integrations</li><li>SQL</li><li>Docker</li></ul></div><div><h4>Platforms and delivery</h4><ul><li>Azure DevOps and CI/CD</li><li>Power Platform</li><li>PIM and RBAC</li><li>Confluence and technical documentation</li><li>Process improvement</li></ul></div>`;
+    ? `<div><h4>Kjernekompetanse</h4><ul><li>Microsoft 365</li><li>Azure og Entra ID</li><li>Intune og endpoint management</li><li>Identitets- og tilgangsstyring</li><li>ITIL og hendelseshåndtering</li><li>IT-drift og brukerstøtte</li></ul></div><div><h4>Automatisering og data</h4><ul><li>PowerShell</li><li>Python og Flask</li><li>Microsoft Graph og REST API-er</li><li>MCP-integrasjoner</li><li>Azure Data Factory</li><li>Databricks og Power BI</li></ul></div><div><h4>Plattform og leveranse</h4><ul><li>Azure DevOps og CI/CD</li><li>Power Apps og Power Platform</li><li>Confluence og teknisk dokumentasjon</li><li>Prosessforbedring</li><li>Docker og Node.js</li></ul></div>`
+    : `<div><h4>Core expertise</h4><ul><li>Microsoft 365</li><li>Azure and Entra ID</li><li>Intune and endpoint management</li><li>Identity and access management</li><li>ITIL and incident handling</li><li>IT operations and support</li></ul></div><div><h4>Automation and data</h4><ul><li>PowerShell</li><li>Python and Flask</li><li>Microsoft Graph and REST APIs</li><li>MCP integrations</li><li>Azure Data Factory</li><li>Databricks and Power BI</li></ul></div><div><h4>Platforms and delivery</h4><ul><li>Azure DevOps and CI/CD</li><li>Power Apps and Power Platform</li><li>Confluence and technical documentation</li><li>Process improvement</li><li>Docker and Node.js</li></ul></div>`;
 }
 
 function refineContact() {
@@ -208,6 +284,7 @@ function refineContact() {
 }
 
 removeOldEducation();
+refineAbout();
 refineExperience();
 refineEducation();
 refineProjects();
