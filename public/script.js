@@ -61,6 +61,33 @@ async function loadStatus() {
 
 loadStatus();
 
+// Remove details that should not be shown in the public portfolio.
+function removePublicDetails() {
+  document.querySelectorAll(".cv-row").forEach((row) => {
+    const text = row.textContent;
+    if (
+      text.includes("ICT Service Trade Certificate") ||
+      text.includes("Fagbrev IKT-servicefag")
+    ) {
+      row.remove();
+    }
+  });
+
+  document.querySelectorAll(".entry-more h4").forEach((heading) => {
+    const label = heading.textContent.trim();
+    if (
+      label === "Problems worth mentioning" ||
+      label === "Problemer verdt å nevne"
+    ) {
+      const details = heading.nextElementSibling;
+      heading.remove();
+      if (details?.tagName === "UL") details.remove();
+    }
+  });
+}
+
+removePublicDetails();
+
 // Give the internal projects memorable, public-safe names and clearer scope.
 function improveProjectCopy() {
   const entries = Array.from(document.querySelectorAll(".entry"));
