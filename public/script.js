@@ -104,22 +104,8 @@ function refineExperience() {
            </ul>
          </div>
        </div>
-       <div class="cv-row">
-         <div class="cv-date">Apr 2019 — Sep 2022</div>
-         <div class="cv-content">
-           <h3>Rådgiver</h3>
-           <p class="cv-org">Politiets IKT-tjenester</p>
-           <p>2. linje brukerstøtte, sakshåndtering og koordinering i et miljø med høye krav til sikkerhet, kvalitet og stabilitet.</p>
-         </div>
-       </div>
-       <div class="cv-row">
-         <div class="cv-date">Jun 2016 — Apr 2019</div>
-         <div class="cv-content">
-           <h3>Brukerstøtte og administrasjon</h3>
-           <p class="cv-org">Forsvarets forskningsinstitutt (FFI)</p>
-           <p>Brukeradministrasjon, klientutstyr, teknisk drift og sikker håndtering av utstyr i et forsknings- og sikkerhetsmiljø.</p>
-         </div>
-       </div>`
+       <div class="cv-row"><div class="cv-date">Apr 2019 — Sep 2022</div><div class="cv-content"><h3>Rådgiver</h3><p class="cv-org">Politiets IKT-tjenester</p><p>2. linje brukerstøtte, sakshåndtering og koordinering i et miljø med høye krav til sikkerhet, kvalitet og stabilitet.</p></div></div>
+       <div class="cv-row"><div class="cv-date">Jun 2016 — Apr 2019</div><div class="cv-content"><h3>Brukerstøtte og administrasjon</h3><p class="cv-org">Forsvarets forskningsinstitutt (FFI)</p><p>Brukeradministrasjon, klientutstyr, teknisk drift og sikker håndtering av utstyr i et forsknings- og sikkerhetsmiljø.</p></div></div>`
     : `<div class="cv-row">
          <div class="cv-date">Sep 2025 —</div>
          <div class="cv-content">
@@ -148,33 +134,21 @@ function refineExperience() {
            </ul>
          </div>
        </div>
-       <div class="cv-row">
-         <div class="cv-date">Apr 2019 — Sep 2022</div>
-         <div class="cv-content">
-           <h3>IT Advisor</h3>
-           <p class="cv-org">Norwegian Police IT Services</p>
-           <p>Second-line support, case handling and coordination in an environment with high requirements for security, quality and stability.</p>
-         </div>
-       </div>
-       <div class="cv-row">
-         <div class="cv-date">Jun 2016 — Apr 2019</div>
-         <div class="cv-content">
-           <h3>IT Support and Administration</h3>
-           <p class="cv-org">Norwegian Defence Research Establishment (FFI)</p>
-           <p>User administration, endpoint equipment, technical operations and secure equipment handling in a research and security environment.</p>
-         </div>
-       </div>`);
+       <div class="cv-row"><div class="cv-date">Apr 2019 — Sep 2022</div><div class="cv-content"><h3>IT Advisor</h3><p class="cv-org">Norwegian Police IT Services</p><p>Second-line support, case handling and coordination in an environment with high requirements for security, quality and stability.</p></div></div>
+       <div class="cv-row"><div class="cv-date">Jun 2016 — Apr 2019</div><div class="cv-content"><h3>IT Support and Administration</h3><p class="cv-org">Norwegian Defence Research Establishment (FFI)</p><p>User administration, endpoint equipment, technical operations and secure equipment handling in a research and security environment.</p></div></div>`);
 }
 
 function refineEducation() {
   const section = document.querySelector(isNorwegian ? "#utdanning" : "#education");
   const row = section?.querySelector(".cv-row");
+  const heading = row?.querySelector("h3");
   const description = row?.querySelector(".cv-content > p:not(.cv-org)");
 
+  if (heading && !isNorwegian) heading.textContent = "BEng in Computer Science";
   if (description) {
     description.textContent = isNorwegian
       ? "Fullfører en bachelor i ingeniørfag – data, med forventet fullføring i 2027. Fagområder inkluderer programmering, algoritmer og datastrukturer, databaser, nettverk, skytjenester og webutvikling."
-      : "Completing a BEng in Computer Engineering, with expected graduation in 2027. Coursework includes programming, algorithms and data structures, databases, networks, cloud services and web development.";
+      : "Completing a BEng in Computer Science, with expected graduation in 2027. Coursework includes programming, algorithms and data structures, databases, networks, cloud services and web development.";
   }
 }
 
@@ -186,25 +160,12 @@ function refineProjects() {
     const intro = mcpEntry.querySelector(".entry-body > p");
     const list = mcpEntry.querySelector(".entry-body > ul.cv-list");
     const more = mcpEntry.querySelector(".entry-more");
-
     if (intro) intro.textContent = isNorwegian
       ? "En samling MCP-integrasjoner som lar godkjente AI-verktøy hente relevant informasjon fra forretningssystemer og reduserer manuelle oppslag og systembytter."
       : "A suite of MCP integrations that lets approved AI tools retrieve relevant information from business systems, reducing manual lookups and context switching.";
-
     setList(list, isNorwegian
-      ? [
-          "Microsoft Graph MCP — brukere, grupper, enheter og tilgang",
-          "Power BI MCP — henting og analyse av rapportdata",
-          "M-Files MCP — søk i dokumenter og metadata",
-          "E-postsikkerhet MCP — støtte ved undersøkelser av spam og phishing",
-        ]
-      : [
-          "Microsoft Graph MCP — users, groups, devices and access",
-          "Power BI MCP — retrieval and analysis of report data",
-          "M-Files MCP — search across documents and metadata",
-          "Email Security MCP — support for spam and phishing investigations",
-        ]);
-
+      ? ["Microsoft Graph MCP — brukere, grupper, enheter og tilgang", "Power BI MCP — henting og analyse av rapportdata", "M-Files MCP — søk i dokumenter og metadata", "E-postsikkerhet MCP — støtte ved undersøkelser av spam og phishing"]
+      : ["Microsoft Graph MCP — users, groups, devices and access", "Power BI MCP — retrieval and analysis of report data", "M-Files MCP — search across documents and metadata", "Email Security MCP — support for spam and phishing investigations"]);
     if (more) more.innerHTML = isNorwegian
       ? `<h4>Resultat</h4><p>Integrasjonene samler informasjon som tidligere krevde flere portaler og manuelle oppslag. Jeg bygget oppsett, installasjon og dokumentasjon slik at løsningene kunne tas i bruk av resten av teamet.</p><h4>Min rolle</h4><p>Utvikling, feilsøking, utrulling og dokumentasjon, med fokus på kontrollert tilgang og enkel bruk for kollegaer.</p>`
       : `<h4>Outcome</h4><p>The integrations bring together information that previously required several portals and manual lookups. I built the setup, installation and documentation so the rest of the team could adopt them.</p><h4>My role</h4><p>Development, troubleshooting, rollout and documentation, with a focus on controlled access and straightforward use for colleagues.</p>`;
@@ -214,30 +175,18 @@ function refineProjects() {
     const heading = entry.querySelector("h3")?.textContent.toLowerCase() || "";
     return heading.includes("support tool") || heading.includes("støtteverktøy") || heading.includes("codec");
   });
-
   if (codecEntry) {
     const heading = codecEntry.querySelector("h3");
     const intro = codecEntry.querySelector(".entry-body > p");
     const list = codecEntry.querySelector(".entry-body > ul.cv-list");
     const more = codecEntry.querySelector(".entry-more");
-
     if (heading) heading.textContent = isNorwegian ? "CODEC — AI-plattform for IT-support" : "CODEC — AI Platform for IT Support";
     if (intro) intro.textContent = isNorwegian
       ? "En intern arbeidsflate jeg utviklet for å samle saksbehandling, kommunikasjon og AI-assistanse på ett sted, med Fox som innebygd AI-agent."
       : "An internal workspace I developed to bring case handling, communication and AI assistance into one place, with Fox as the embedded AI agent.";
-
     setList(list, isNorwegian
-      ? [
-          "Fox lager utkast til svar i riktig tone og språk",
-          "Sakshistorikk og kommunikasjon samlet i én visning",
-          "Automatiske oppsummeringer, kategorisering og støtte ved prioritering",
-        ]
-      : [
-          "Fox drafts replies in the appropriate tone and language",
-          "Case history and communication brought together in one view",
-          "Automatic summaries, categorisation and prioritisation support",
-        ]);
-
+      ? ["Fox lager utkast til svar i riktig tone og språk", "Sakshistorikk og kommunikasjon samlet i én visning", "Automatiske oppsummeringer, kategorisering og støtte ved prioritering"]
+      : ["Fox drafts replies in the appropriate tone and language", "Case history and communication brought together in one view", "Automatic summaries, categorisation and prioritisation support"]);
     if (more) more.innerHTML = isNorwegian
       ? `<h4>Utfordringen</h4><p>Saksbehandling krevde flere manuelle steg og bytte mellom ulike systemer.</p><h4>Løsningen</h4><p>CODEC samler relevant sakshistorikk, kommunikasjon og AI-funksjoner i én arbeidsflate. Jeg designet og utviklet løsningen, integrasjonene og Fox-agenten.</p><h4>Effekt</h4><p>Raskere oversikt, bedre utkast og mindre manuelt arbeid i den daglige saksbehandlingen.</p>`
       : `<h4>Challenge</h4><p>Case handling required several manual steps and switching between different systems.</p><h4>Solution</h4><p>CODEC brings relevant case history, communication and AI capabilities into one workspace. I designed and developed the solution, its integrations and the Fox agent.</p><h4>Impact</h4><p>Faster case overview, stronger drafts and less manual work in day-to-day support.</p>`;
@@ -250,7 +199,6 @@ function refineProjects() {
     if (intro) intro.textContent = isNorwegian
       ? "Bidrag til en AI-drevet ende-til-ende datapipeline for dokumentprosessering med M-Files, Azure Data Factory, Databricks, Azure OpenAI, Power Apps og Power BI."
       : "Contributions to an AI-driven end-to-end data pipeline for document processing using M-Files, Azure Data Factory, Databricks, Azure OpenAI, Power Apps and Power BI.";
-
     if (more) more.innerHTML = isNorwegian
       ? `<h4>Mitt bidrag</h4><ul class="cv-list"><li>Automatisert dokumentflyt og AI-basert dataekstraksjon</li><li>Validering og strukturering av data før lagring i datavarehus</li><li>Dataflyt fra dokumentinntak til visualisering i Power BI</li><li>Forbedret datakvalitet, sporbarhet og effektivitet ved å erstatte manuelle steg</li></ul>`
       : `<h4>My contribution</h4><ul class="cv-list"><li>Automated document flow and AI-based data extraction</li><li>Validation and structuring of data before storage in the data warehouse</li><li>Data flow from document intake through to Power BI visualisation</li><li>Improved data quality, traceability and efficiency by replacing manual steps</li></ul>`;
@@ -261,6 +209,43 @@ function refineProjects() {
     const heading = entry.querySelector("h3")?.textContent.toLowerCase() || "";
     if (status && (heading.includes("site") || heading.includes("siden"))) status.textContent = "Live";
   });
+}
+
+function addAcademicProject() {
+  const section = document.querySelector(isNorwegian ? "#prosjekter" : "#projects");
+  if (!section || section.querySelector("[data-project='data1200']")) return;
+
+  section.insertAdjacentHTML("beforeend", isNorwegian
+    ? `<article class="entry" data-project="data1200">
+         <div class="entry-meta"><span class="entry-status">Gruppeprosjekt · 2024</span></div>
+         <div class="entry-body">
+           <h3>DATA1200 webprosjekt</h3>
+           <p>Akademisk gruppeprosjekt ved OsloMet der vi utviklet en responsiv nettside med HTML og CSS.</p>
+           <ul class="cv-list">
+             <li>Bygget og stylet tabelløsningen for studieprogram, semestre, emner, emnekoder og studiepoeng</li>
+             <li>Brukte semantiske tabeller med caption, thead, tbody og tydelige kolonneoverskrifter</li>
+             <li>Arbeidet med responsiv presentasjon, lesbarhet og universell utforming</li>
+             <li>Samarbeidet med gruppen gjennom Git og GitHub</li>
+           </ul>
+           <p><a href="https://github.com/heinesel/DATA1200-Exam" target="_blank" rel="noopener" class="link-plain">Se prosjektet på GitHub</a></p>
+           <p class="entry-tech">HTML · CSS · Semantisk HTML · Universell utforming · Git · GitHub</p>
+         </div>
+       </article>`
+    : `<article class="entry" data-project="data1200">
+         <div class="entry-meta"><span class="entry-status">Group project · 2024</span></div>
+         <div class="entry-body">
+           <h3>DATA1200 Web Project</h3>
+           <p>Academic group project at OsloMet where we developed a responsive website using HTML and CSS.</p>
+           <ul class="cv-list">
+             <li>Developed and styled the table system for study programmes, semesters, courses, course codes and credits</li>
+             <li>Used semantic tables with captions, table headers, table bodies and clear column headings</li>
+             <li>Worked on responsive presentation, readability and accessibility</li>
+             <li>Collaborated with the group through Git and GitHub</li>
+           </ul>
+           <p><a href="https://github.com/heinesel/DATA1200-Exam" target="_blank" rel="noopener" class="link-plain">View project on GitHub</a></p>
+           <p class="entry-tech">HTML · CSS · Semantic HTML · Accessibility · Git · GitHub</p>
+         </div>
+       </article>`);
 }
 
 function refineSkills() {
@@ -288,6 +273,7 @@ refineAbout();
 refineExperience();
 refineEducation();
 refineProjects();
+addAcademicProject();
 refineSkills();
 refineContact();
 loadStatus();
